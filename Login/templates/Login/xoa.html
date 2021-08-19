@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xóa</title>
+</head>
+<body>
+<form action="" method="POST">
+    {% csrf_token %}
+    <p>Bạn có chắc chắn xóa??? "{{item.title}}"</p>
+    <input type="submit" name="Submit">
+</form>
+</body>
+</html>

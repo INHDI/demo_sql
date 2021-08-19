@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thêm Sửa Xóa</title>
+</head>
+<body>
+<form action="" method="POST">
+    {% csrf_token %}
+    {{form}}
+    <input type="submit" name="Submit">
+</form>
+    <h1>Danh sách</h1>
+{% for item in list %}
+<div class="card" style="width: 18rem;">
+    <div class="card-body">
+        <h2 class="card-title">{{item.title}}</h2>
+        <p class="card-text">{{item.body}}</p>
+        <p class="card-text">{{item.date}}</p>
+        <a href="{% url 'sua' item.id %}" class="btn btn-primary">Sửa</a>
+        <a href="{% url 'xoa' item.id %}" class="btn btn-primary">Xóa</a>
+    </div>
+</div>
+{% endfor %}
+
+</body>
+</html>
